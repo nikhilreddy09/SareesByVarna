@@ -35,6 +35,10 @@
     /* We tell both sidebars to share a row */
     .container { flex-direction: column;}    
     .left-column { width: 100%;}
+
+    .sharingbuttons .whatsappbutton {
+        width: fit-content;
+    }
   }
 
   .price h3 {
@@ -48,4 +52,20 @@
   .email {
       margin-top: 20%;
     text-align: left;
+    margin-bottom: 10%;
   }
+
+.whatsappbutton {
+    margin-top: 50px;
+}
+
+button a {
+    color: black;
+}
+
+.sharingbuttons {
+    margin-top: 20%;
+}
+.sharingbuttons .whatsappbutton {
+    margin-top: 20px;
+}

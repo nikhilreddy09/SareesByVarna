@@ -71,15 +71,21 @@ class SingleProduct extends React.Component {
                             <div className="product-type">
                                 <h3>{this.props.location.data.type}</h3>
                             </div>
-                            <div className="email">
-                                <i className="envelope open icon large"></i>
-                                <span><a href="mailto:gudibandisainikhilreddy@gmail.com" subject={this.props.location.data.name}>Email about this product</a></span>
-                                <a 
-                                href={`https://wa.me/919908802405/?text=`
-                                +encodeURIComponent("Hie . I would like to enquire about "+this.props.location.data.name+
-                                " which is of type "+this.props.location.data.type+". The price of the product is "+this.props.location.data.price)} 
-                                target="_blank">Whatsapp me</a>
+                            <div className="sharingbuttons">
+                            <button className="ui primary basic button email">
+                            <i className="envelope open icon large"></i>
+                            <span><a href="mailto:gudibandisainikhilreddy@gmail.com" subject={this.props.location.data.name}>Email about this product</a></span>
+                            </button>
+                            <button className="ui positive basic button whatsappbutton">
+                            <i class="whatsapp icon large"></i>
+                            <a 
+                            href={`https://wa.me/919908802405/?text=`
+                            +encodeURIComponent("Hie . I would like to enquire about "+this.props.location.data.name+
+                            " which is of type "+this.props.location.data.type+". The price of the product is "+this.props.location.data.price)} 
+                            target="_blank">Whatsapp to enquire</a>
+                        </button>
                             </div>
+
                         </div>
                     </main>
                 </span>
