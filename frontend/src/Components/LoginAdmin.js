@@ -4,9 +4,7 @@ import {loginAdmin} from '../Actions'
 import history from '../history'
 class LoginAdmin extends React.Component {
 
-
     state = {email : "", password : ""};
-
 
     changevalues = (e) => {
         console.log(e.target.name, e.target.value)
@@ -19,7 +17,9 @@ class LoginAdmin extends React.Component {
     checkvalues = (e) => {
         e.preventDefault();
         this.props.loginAdmin(this.state);
+        
         history.push('/dashboard')
+
     }
 
     render() {

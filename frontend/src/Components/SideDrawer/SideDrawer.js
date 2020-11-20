@@ -6,7 +6,8 @@ const sideDrawer = props => (
         <ul>
             <li> <Link to="/">Home</Link> </li>
             <li> <Link to="/">About</Link> </li>
-            <li> <Link to="/">Products</Link> </li>
+            <li> <Link to="/all">Products</Link> </li>
+            <li><Link to="/admin">Admin</Link></li>
         </ul>
     </nav>
 )

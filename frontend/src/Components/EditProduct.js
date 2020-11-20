@@ -2,6 +2,7 @@ import React from 'react';
 import {connect} from 'react-redux'
 import history from '../history'
 import {Editsaree} from '../Actions'
+import Toast from 'light-toast';
 import NavBar from './NavBar';
 class EditProduct extends React.Component {
     state = {name : this.props.location.state.name , price: this.props.location.state.price, sareetype: this.props.location.state.sareetype};
@@ -22,6 +23,9 @@ class EditProduct extends React.Component {
         e.preventDefault();
         console.log(this.state)
         this.props.Editsaree(this.props.location.state.id, this.state, this.props.loggedin)
+        Toast.success('Product sucessfully edited', 2000,() => {
+            
+        })
         history.push('/manage')
     }
 

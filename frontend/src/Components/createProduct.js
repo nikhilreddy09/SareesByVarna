@@ -1,6 +1,7 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import {addProduct} from '../Actions';
+import Toast from 'light-toast';
 import history from '../history';
 import NavBar from './NavBar';
 class createProduct extends React.Component {
@@ -22,8 +23,28 @@ class createProduct extends React.Component {
     submitValues = (e) => {
         e.preventDefault();
         console.log(this.state)
-        this.props.addProduct(this.state, this.props.loggedin)
-        history.push('/dashboard')
+        if(this.state.name ===''){
+            this.toastmessage('enter a valid name')
+        } else if(this.state.price === 0) {
+            this.toastmessage('enter a valid price')
+        } else if(this.state.sareetype === '') {
+            this.toastmessage('enter a valid type')
+        } else if(this.state.imagesUrl.length === 0) {
+            this.toastmessage('please upload images')
+        } else {
+            this.props.addProduct(this.state, this.props.loggedin)
+            history.push('/dashboard')
+            Toast.success('Product Sucessfully uploaded', 2000,() => {
+                
+            })
+        }
+
+    }
+
+    toastmessage(message) {
+        Toast.info(message,3000,() => {
+            console.log("case failed")
+        })
     }
 
     openWidget = () => {

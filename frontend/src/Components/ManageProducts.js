@@ -3,6 +3,7 @@ import {connect} from 'react-redux'
 import {GetAllProducts, deleteProduct} from '../Actions/index'
 import { bindActionCreators } from 'redux'
 import {Link} from 'react-router-dom'
+import Toast from 'light-toast';
 import history from '../history'
 import NavBar from './NavBar'
 class ManageProducts extends React.Component {
@@ -16,6 +17,10 @@ class ManageProducts extends React.Component {
         }
         else {
             this.props.deleteProduct(id,this.props.loggedin)
+            Toast.success("product sucessfully deleted", 1000, () => {
+                
+            })
+            history.push('/dashboard')
         }
     }
 
