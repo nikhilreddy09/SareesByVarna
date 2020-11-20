@@ -1,0 +1,51 @@
+.container {
+    display: flex;
+    margin: 0 auto;
+    padding: 15px;
+}
+
+.left-column {
+    width: 50%;
+    position: relative;
+}
+
+.right-column {
+    width: 40%;
+
+}
+
+.product-name h1 {
+    letter-spacing: 3.5px;
+    text-transform: uppercase;
+    font-family: 'Taviraj', serif;
+    text-align: left;
+}
+
+.right-column {
+    margin-top: 5%;
+    text-align: left;
+}
+
+.product-type h3 {
+    letter-spacing: 4px;
+    text-transform: uppercase;
+}
+
+@media all and (max-width: 880px) {
+    /* We tell both sidebars to share a row */
+    .container { flex-direction: column;}    
+    .left-column { width: 100%;}
+  }
+
+  .price h3 {
+      font-weight: 200;
+  }
+
+  hr {
+      width: 100%;
+  }
+
+  .email {
+      margin-top: 20%;
+    text-align: left;
+  }
