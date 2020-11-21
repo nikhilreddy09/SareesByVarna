@@ -23,7 +23,9 @@
 .toolbar_logo a{
     color: #dbaaa9;
     text-decoration: none;
-    font-size: 2rem;
+    font-size: 1.7rem;
+    font-family: 'Proza Libre', sans-serif;
+    
 }
 
 .toolbar_navigation-items ul {

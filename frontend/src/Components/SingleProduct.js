@@ -80,6 +80,7 @@ class SingleProduct extends React.Component {
                             " which is of type "+this.props.location.data.type+". The price of the product is "+this.props.location.data.price)} 
                             target="_blank" rel="noreferrer">Whatsapp to enquire</a>
                         </button>
+                            <br className="brmodify" />
                             <button className="ui primary basic button email">
                             <i className="envelope open icon large"></i>
                             <span><a href="mailto:gudibandisainikhilreddy@gmail.com" subject={this.props.location.data.name}>Email about this product</a></span>
