@@ -16,6 +16,7 @@ class LoginAdmin extends React.Component {
 
     checkvalues = (e) => {
         e.preventDefault();
+        console.log(this.state)
         this.props.loginAdmin(this.state);
         
         history.push('/dashboard')

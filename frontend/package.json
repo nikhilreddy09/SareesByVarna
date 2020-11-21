@@ -19,15 +19,18 @@
     "react-icons": "^3.11.0",
     "react-image-gallery": "^1.0.8",
     "react-paginate": "^6.5.0",
+    "react-player": "^2.7.0",
     "react-redux": "^7.2.2",
     "react-responsive-carousel": "^3.2.10",
     "react-router-dom": "^5.2.0",
     "react-scripts": "4.0.0",
     "react-stack-grid": "^0.7.1",
+    "react-video-renderer": "^2.4.6",
     "reactstrap": "^8.7.1",
     "redux": "^4.0.5",
     "redux-thunk": "^2.3.0",
     "styled-components": "^5.2.1",
+    "video-react": "^0.14.1",
     "web-vitals": "^0.2.4"
   },
   "scripts": {

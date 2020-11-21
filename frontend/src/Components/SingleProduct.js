@@ -1,15 +1,16 @@
 import React from 'react';
-// import { withKnobs, text, boolean, number } from '@storybook/addon-knobs';
 import Toolbar from './Toolbar/Toolbar';
 import SideDrawer from './SideDrawer/SideDrawer';
 import "react-responsive-carousel/lib/styles/carousel.min.css"
 import { Carousel } from 'react-responsive-carousel';
+import { Player } from 'video-react';
 import '../Styles/SingleProduct.css'
 
 class SingleProduct extends React.Component {
  
     state = {
         sideDrawerOpen: false,
+        playing: false
     }
 
     drawerToggleClickHandler = () => {
@@ -26,6 +27,7 @@ class SingleProduct extends React.Component {
         })
     }
 
+
     renderImages() {
         return this.props.location.data.images.map((item, index) => {
             return (
@@ -35,7 +37,6 @@ class SingleProduct extends React.Component {
             )
         })
     }
-
     render() {
         let size = '';
         if(window.screen.width  < 800) {
@@ -56,8 +57,11 @@ class SingleProduct extends React.Component {
                 <span onClick={this.backgroundClickhandler}>
                     <main className="container">
                         <div className="left-column">
-                            <Carousel autoPlay interval="5000" transitionTime="2000" infiniteLoop={true} showThumbs={false} width={size}>
+                            <Carousel className="containerimages" autoPlay dynamicHeight={true} interval="5000" transitionTime="2000" infiniteLoop={false} showThumbs={false} width={size}>
                                 {this.renderImages()}
+                                <Player>
+                                <source src="https://res.cloudinary.com/ddw1pcmlc/video/upload/v1605982787/123886654_115283253575062_3377776867325242153_n_aa7kz0.mp4" />
+                              </Player>
                             </Carousel>
                         </div>
                         <div className="right-column">
