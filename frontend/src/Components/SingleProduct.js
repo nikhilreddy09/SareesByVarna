@@ -59,9 +59,15 @@ class SingleProduct extends React.Component {
                         <div className="left-column">
                             <Carousel className="containerimages" autoPlay dynamicHeight={true} interval="5000" transitionTime="2000" infiniteLoop={false} showThumbs={false} width={size}>
                                 {this.renderImages()}
-                                <Player>
-                                <source src="https://res.cloudinary.com/ddw1pcmlc/video/upload/v1605982787/123886654_115283253575062_3377776867325242153_n_aa7kz0.mp4" />
-                              </Player>
+                                <iframe
+                                    src="https://player.cloudinary.com/embed/?public_id=elephants&cloud_name=demo&player%5Bfluid%5D=true&player%5Bcontrols%5D=true&source%5Bsource_types%5D%5B0%5D=mp4"
+                                    width={size}
+                                    height="450"
+                                    allow="autoplay; fullscreen; encrypted-media; picture-in-picture"
+                                    allowfullscreen
+                                    frameborder="0"
+                                    title="saree"
+                                ></iframe>
                             </Carousel>
                         </div>
                         <div className="right-column">

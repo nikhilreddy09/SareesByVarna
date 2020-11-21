@@ -17,9 +17,6 @@
 .containerimages  {
     height: max-content;
 }
-.containerimages Player Source {
-    height: inherit;
-}
 
 .product-name h1 {
     letter-spacing: 3.5px;
