@@ -30,7 +30,7 @@ class SingleProduct extends React.Component {
         return this.props.location.data.images.map((item, index) => {
             return (
                 <div>
-                    <img src={item} height={450}/>
+                    <img src={item} height={450} alt="saree"/>
                 </div>
             )
         })
@@ -72,20 +72,20 @@ class SingleProduct extends React.Component {
                                 <h3>{this.props.location.data.type}</h3>
                             </div>
                             <div className="sharingbuttons">
+                            <button className="ui positive basic button whatsappbutton">
+                            <i className="whatsapp icon large"></i>
+                            <a 
+                            href={`https://wa.me/919989499031/?text=`
+                            +encodeURIComponent("Hello.I would like to enquire about "+this.props.location.data.name+
+                            " which is of type "+this.props.location.data.type+". The price of the product is "+this.props.location.data.price)} 
+                            target="_blank" rel="noreferrer">Whatsapp to enquire</a>
+                        </button>
                             <button className="ui primary basic button email">
                             <i className="envelope open icon large"></i>
                             <span><a href="mailto:gudibandisainikhilreddy@gmail.com" subject={this.props.location.data.name}>Email about this product</a></span>
                             </button>
-                            <button className="ui positive basic button whatsappbutton">
-                            <i class="whatsapp icon large"></i>
-                            <a 
-                            href={`https://wa.me/919908802405/?text=`
-                            +encodeURIComponent("Hie . I would like to enquire about "+this.props.location.data.name+
-                            " which is of type "+this.props.location.data.type+". The price of the product is "+this.props.location.data.price)} 
-                            target="_blank">Whatsapp to enquire</a>
-                        </button>
+                            
                             </div>
-
                         </div>
                     </main>
                 </span>

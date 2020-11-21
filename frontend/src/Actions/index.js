@@ -35,6 +35,11 @@ export const loginAdmin = (data) => async dispatch => {
     
 }
 
+export const deleteAdmin = data => ({
+    type: "LOGOUT_ADMIN",
+    payload: data
+});
+
 export const GetAllProducts = () => async dispatch => {
     const response = await api.get('/admin/all')
     dispatch({type: 'ALL_PRODUCTS', payload: response.data})

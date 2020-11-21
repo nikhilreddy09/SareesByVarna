@@ -14,7 +14,7 @@ const App = () => {
         <div>
             <Router history={history}>
                 <div>
-                    <Route path="/" component={LandingPage} exact />
+                    <Route path="/" component={AllProducts} exact />
                     <Route path="/all" component={AllProducts} />
                     <Route path="/admin" component={LoginAdmin} />
                     <Route path="/create" component={createProduct} />

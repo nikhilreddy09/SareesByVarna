@@ -1,9 +1,7 @@
 import React from 'react'
 import {connect} from 'react-redux'
 import {Link} from 'react-router-dom'
-import ReactPaginate from 'react-paginate';
 import {GetAllProducts} from '../Actions'
-import SingleProduct from './SingleProduct';
 import StackGrid from "react-stack-grid";
 import '../Styles/products.css'
 // import UserNavBar from './UserNavbar';

@@ -53,10 +53,16 @@
       margin-top: 20%;
     text-align: left;
     margin-bottom: 10%;
+    margin-left: 10%;
+    margin-right: 10%;
+    padding: 5px;
   }
 
 .whatsappbutton {
     margin-top: 50px;
+    width: 400px;
+    margin-bottom: 20%;
+    margin: 50px;
 }
 
 button a {
