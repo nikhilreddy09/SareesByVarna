@@ -38,6 +38,8 @@ class SingleProduct extends React.Component {
         })
     }
     render() {
+        const params = "cloud_name=ddw1pcmlc&public_id=v1605982787/123886654_115283253575062_3377776867325242153_n_aa7kz0"
+        const url = "https://player.cloudinary.com/embed/?"+params;
         let size = '';
         if(window.screen.width  < 800) {
             size = '100%'
@@ -60,12 +62,12 @@ class SingleProduct extends React.Component {
                             <Carousel className="containerimages" autoPlay dynamicHeight={true} interval="5000" transitionTime="2000" infiniteLoop={false} showThumbs={false} width={size}>
                                 {this.renderImages()}
                                 <iframe
-                                    src="https://player.cloudinary.com/embed/?public_id=elephants&cloud_name=demo&player%5Bfluid%5D=true&player%5Bcontrols%5D=true&source%5Bsource_types%5D%5B0%5D=mp4"
+                                    src={url}
                                     width={size}
                                     height="450"
-                                    allow="autoplay; fullscreen; encrypted-media; picture-in-picture"
+                                    allow="autoplay; fullscreen;"
                                     allowfullscreen
-                                    frameborder="0"
+                                    style={{marginTop:'100px', width:'80%'}}
                                     title="saree"
                                 ></iframe>
                             </Carousel>
