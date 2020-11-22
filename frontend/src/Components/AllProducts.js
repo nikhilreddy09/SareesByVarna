@@ -45,6 +45,7 @@ class AllProducts extends React.Component {
             return null;
         }
         else {
+            console.log(this.props.products)
             return this.props.products.map((item) => {
                 let url = item.imagesUrl[0]
                 return (    <Link to={{
@@ -53,7 +54,8 @@ class AllProducts extends React.Component {
                                     name: item.name,
                                     price: item.price,
                                     images: item.imagesUrl,
-                                    type: item.sareetype
+                                    type: item.sareetype,
+                                    videoPublicId: item.videoPublicid
                                 }
                             }}>
                                 <div className="card">

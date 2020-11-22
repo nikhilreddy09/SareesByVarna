@@ -45,6 +45,10 @@
     .sharingbuttons .whatsappbutton {
         width: fit-content;
     }
+
+    .right-column .email {
+        width: fit-content;
+    }
   }
 
   .price h3 {
@@ -64,12 +68,13 @@
     padding: 5px;
   }
 
-.whatsappbutton {
-    margin-top: 50px;
+.right-column .whatsappbutton {
+    margin-top: 20%;
+    margin-right: 20px;
+    margin-bottom: 10px;
     width: 400px;
-    margin-bottom: 20%;
-    margin: 50px;
 }
+
 
 button a {
     color: black;
@@ -77,9 +82,6 @@ button a {
 
 .sharingbuttons {
     margin-top: 20%;
-}
-.sharingbuttons .whatsappbutton {
-    margin-top: 20px;
 }
 
 

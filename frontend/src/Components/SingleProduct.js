@@ -37,9 +37,26 @@ class SingleProduct extends React.Component {
             )
         })
     }
-    render() {
-        const params = "cloud_name=ddw1pcmlc&public_id=v1605982787/123886654_115283253575062_3377776867325242153_n_aa7kz0"
+
+    renderVideo() {
+        console.log(this.props.location.data.videoPublicId)
+        const str = this.props.location.data.videoPublicId.replace(".mp4","");
+        console.log(str)
+        const params = `cloud_name=ddw1pcmlc&public_id=${str}`;
         const url = "https://player.cloudinary.com/embed/?"+params;
+        return (
+            <iframe
+                src={url}
+                width= {window.screen.width < 800 ? '100%': '500px'}
+                height="450"
+                allow="autoplay; fullscreen;"
+                allowfullscreen
+                style={{marginTop:'100px', width:'80%'}}
+                title="saree"
+                ></iframe>
+        )
+    }
+    render() {
         let size = '';
         if(window.screen.width  < 800) {
             size = '100%'
@@ -61,15 +78,7 @@ class SingleProduct extends React.Component {
                         <div className="left-column">
                             <Carousel className="containerimages" autoPlay dynamicHeight={true} interval="5000" transitionTime="2000" infiniteLoop={false} showThumbs={false} width={size}>
                                 {this.renderImages()}
-                                <iframe
-                                    src={url}
-                                    width={size}
-                                    height="450"
-                                    allow="autoplay; fullscreen;"
-                                    allowfullscreen
-                                    style={{marginTop:'100px', width:'80%'}}
-                                    title="saree"
-                                ></iframe>
+                                {this.renderVideo()}
                             </Carousel>
                         </div>
                         <div className="right-column">
@@ -83,8 +92,7 @@ class SingleProduct extends React.Component {
                             <div className="product-type">
                                 <h3>{this.props.location.data.type}</h3>
                             </div>
-                            <div className="sharingbuttons">
-                            <button className="ui positive basic button whatsappbutton">
+                            <button className=" whatsappbutton ui positive basic button">
                             <i className="whatsapp icon large"></i>
                             <a 
                             href={`https://wa.me/919989499031/?text=`
@@ -92,13 +100,10 @@ class SingleProduct extends React.Component {
                             " which is of type "+this.props.location.data.type+". The price of the product is "+this.props.location.data.price)} 
                             target="_blank" rel="noreferrer">Whatsapp to enquire</a>
                         </button>
-                            <br className="brmodify" />
                             <button className="ui primary basic button email">
                             <i className="envelope open icon large"></i>
                             <span><a href="mailto:gudibandisainikhilreddy@gmail.com" subject={this.props.location.data.name}>Email about this product</a></span>
                             </button>
-                            
-                            </div>
                         </div>
                     </main>
                 </span>

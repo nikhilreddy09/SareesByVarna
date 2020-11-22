@@ -5,7 +5,7 @@ import Toast from 'light-toast';
 import history from '../history';
 import NavBar from './NavBar';
 class createProduct extends React.Component {
-    state = {name : "", price: 0, sareetype: "", imagesUrl: []};
+    state = {name : "", price: 0, sareetype: "", imagesUrl: [], videoPublicid: ""};
 
     componentDidMount() {
         if(!this.props.loggedin){
@@ -31,14 +31,16 @@ class createProduct extends React.Component {
             this.toastmessage('enter a valid type')
         } else if(this.state.imagesUrl.length === 0) {
             this.toastmessage('please upload images')
-        } else {
+        } else if(this.state.videoPulicid === "") {
+            this.toastmessage('please upload a video')
+        }
+         else {
+             console.log(this.state)
             this.props.addProduct(this.state, this.props.loggedin)
             history.push('/dashboard')
             Toast.success('Product Sucessfully uploaded', 2000,() => {
-                
             })
         }
-
     }
 
     toastmessage(message) {
@@ -54,8 +56,25 @@ class createProduct extends React.Component {
         },(err,result) => {
             if(result.event === 'success'){
                 this.state.imagesUrl.push(result.info.secure_url)
-                this.setState({imagesUrl: this.state.imagesUrl})
+                this.setState(() => {
+                    return {imagesUrl: this.state.imagesUrl}
+                })
             }
+        }).open()
+    }
+
+    openWidgetVideos = () => {
+        window.cloudinary.createUploadWidget({
+            cloudName: 'ddw1pcmlc',
+            uploadPreset: 'hp7m3qxg'
+        },(err,result) => {
+            if(result.event === 'success'){
+                console.log(result.info)
+                this.setState({
+                    videoPublicid: result.info.path
+                })
+            }
+            console.log(this.state)
         }).open()
     }
 
@@ -76,7 +95,8 @@ class createProduct extends React.Component {
                         <label>Saree Price</label>
                         <input type="number" name="price" placeholder="enter Saree Price" onChange = {(e) => this.changevalues(e)} />
                     </div>
-                    <button type="button" className="ui button primary" onClick={this.openWidget}>Upload</button>
+                    <button type="button" className="ui button primary" onClick={this.openWidget}>Upload Images</button>
+                    <button type="button" className="ui button primary" onClick={this.openWidgetVideos}>Upload Video</button>
                     <button className="ui button" type="submit">Submit</button>
                 </form>
             </div>

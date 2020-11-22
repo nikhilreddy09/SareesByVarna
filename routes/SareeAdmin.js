@@ -7,7 +7,8 @@ router.post('/add', async(req,res) => {
         name : req.body.name,
         price : req.body.price,
         sareetype : req.body.sareetype,
-        imagesUrl : req.body.imagesUrl
+        imagesUrl : req.body.imagesUrl,
+        videoPublicid: req.body.videoPublicid
     })
     try {
         const savedSaree = await saree.save()

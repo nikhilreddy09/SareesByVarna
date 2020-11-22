@@ -2,6 +2,7 @@ import api from '../apis/index'
 import history from '../history';
 import Toast from 'light-toast';
 export const addProduct = (data,token) => async dispatch => {
+    console.log(data)
     const response = await api.post('/sareeadmin/add', data, {
         headers: {
             'authorization' : `Bearer ${token}`
@@ -42,6 +43,7 @@ export const deleteAdmin = data => ({
 
 export const GetAllProducts = () => async dispatch => {
     const response = await api.get('/admin/all')
+    console.log(response.data)
     dispatch({type: 'ALL_PRODUCTS', payload: response.data})
 }
 
