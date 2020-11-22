@@ -42,7 +42,7 @@
     .container { flex-direction: column;}    
     .left-column { width: 100%;}
 
-    .sharingbuttons .whatsappbutton {
+    .right-column .whatsappbutton {
         width: fit-content;
     }
 
@@ -59,10 +59,10 @@
       width: 100%;
   }
 
-  .email {
+.right-column  .email {
       margin-top: 20%;
-    text-align: left;
     margin-bottom: 10%;
+    width: 300px;
     margin-left: 10%;
     margin-right: 10%;
     padding: 5px;
