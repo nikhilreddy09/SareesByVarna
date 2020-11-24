@@ -76,7 +76,8 @@ class SingleProduct extends React.Component {
                 <span onClick={this.backgroundClickhandler}>
                     <main className="container">
                         <div className="left-column">
-                            <Carousel className="containerimages" autoPlay dynamicHeight={true} interval="5000" transitionTime="2000" infiniteLoop={false} showThumbs={false} width={size}>
+                            <Carousel className="containerimages" autoPlay dynamicHeight={true} 
+                                interval="5000" transitionTime="2000" infiniteLoop={false} showThumbs={false} width={size}>
                                 {this.renderImages()}
                                 {this.renderVideo()}
                             </Carousel>
