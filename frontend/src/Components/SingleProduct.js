@@ -38,24 +38,24 @@ class SingleProduct extends React.Component {
         })
     }
 
-    renderVideo() {
-        console.log(this.props.location.data.videoPublicId)
-        const str = this.props.location.data.videoPublicId.replace(".mp4","");
-        console.log(str)
-        const params = `cloud_name=ddw1pcmlc&public_id=${str}`;
-        const url = "https://player.cloudinary.com/embed/?"+params;
-        return (
-            <iframe
-                src={url}
-                width= {window.screen.width < 800 ? '100%': '500px'}
-                height="450"
-                allow="autoplay; fullscreen;"
-                allowfullscreen
-                style={{marginTop:'100px', width:'80%'}}
-                title="saree"
-                ></iframe>
-        )
-    }
+    // renderVideo() {
+    //     console.log(this.props.location.data.videoPublicId)
+    //     const str = this.props.location.data.videoPublicId.replace(".mp4","");
+    //     console.log(str)
+    //     const params = `cloud_name=ddw1pcmlc&public_id=${str}`;
+    //     const url = "https://player.cloudinary.com/embed/?"+params;
+    //     return (
+    //         <iframe
+    //             src={url}
+    //             width= {window.screen.width < 800 ? '100%': '500px'}
+    //             height="450"
+    //             allow="autoplay; fullscreen;"
+    //             allowfullscreen
+    //             style={{marginTop:'100px', width:'80%'}}
+    //             title="saree"
+    //             ></iframe>
+    //     )
+    // }
     render() {
         let size = '';
         if(window.screen.width  < 800) {
@@ -79,7 +79,6 @@ class SingleProduct extends React.Component {
                             <Carousel className="containerimages" autoPlay dynamicHeight={true} 
                                 interval="5000" transitionTime="2000" infiniteLoop={false} showThumbs={false} width={size}>
                                 {this.renderImages()}
-                                {this.renderVideo()}
                             </Carousel>
                         </div>
                         <div className="right-column">

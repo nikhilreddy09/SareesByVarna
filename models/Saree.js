@@ -18,10 +18,6 @@ const sareeSchema = new schema({
     imagesUrl: {
         type: Array,
         required: true
-    },
-    videoPublicid: {
-        type: String,
-        required:true
     }
 })
 

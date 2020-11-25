@@ -55,7 +55,6 @@ class AllProducts extends React.Component {
                                     price: item.price,
                                     images: item.imagesUrl,
                                     type: item.sareetype,
-                                    videoPublicId: item.videoPublicid
                                 }
                             }}>
                                 <div className="card">
